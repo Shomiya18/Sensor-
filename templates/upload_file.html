@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sensor Fault Detection</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .dropzone {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dropzone:hover {
+      background: #f5f5f5;
+      border-color: deeppink;
+    }
+
+    .upload-icon {
+      width: 40px;
+      height: 40px;
+      opacity: 0.7;
+      transition: transform 0.3s ease;
+    }
+
+    .dropzone:hover .upload-icon {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    .file-name {
+      font-size: 12px;
+      color: #444;
+      margin-top: 8px;
+      word-wrap: break-word;
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+
+    .btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px hotpink;
+    }
+  </style>
+</head>
+<body>
+
+<form action="/predict" method="post" enctype="multipart/form-data">
+  <h1 class="title">Upload CSV for Sensor Fault Prediction</h1>
+
+  <div class="frame">
+    <div class="center">
+      <div class="title">
+        <h1>Drop file to upload</h1>
+      </div>
+
+      <div class="dropzone" id="dropzone">
+        <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" class="upload-icon" />
+        <input type="file" class="upload-input" name="file" accept=".csv" id="fileInput">
+        <div class="file-name" id="fileName">No file selected</div>
+      </div>
+
+      <button type="submit" class="btn" name="uploadbutton">Upload File</button>
+    </div>
+  </div>
+</form>
+
+<script>
+  const fileInput = document.getElementById('fileInput');
+  const fileName = document.getElementById('fileName');
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      fileName.textContent = fileInput.files[0].name;
+    } else {
+      fileName.textContent = "No file selected";
+    }
+  });
+</script>
+
+</body>
+</html>
