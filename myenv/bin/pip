@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/Users/shomiyachaturvedi/Desktop/sensor project /myenv/bin/python" "$0" "$@"
+'''exec' "/Users/shomiyachaturvedi/Desktop/sensor project /myenv/bin/python3.11" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
