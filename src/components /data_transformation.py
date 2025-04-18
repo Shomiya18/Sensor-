@@ -7,8 +7,10 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import RobustScaler, FunctionTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from constants import TARGET_COLUMN, artifacts
 
-from src.constant import *
+
+from constants import *
 from src.exception import CustomException
 from src.logger import logging
 from src.utils.main_utils import MainUtils

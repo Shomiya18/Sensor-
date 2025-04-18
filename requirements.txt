@@ -1,6 +1,8 @@
 pandas 
 numpy
 scikit-learn
+pymongo
+xgboost
 setuptools
 aiofiles
 dill==0.3.5.1
